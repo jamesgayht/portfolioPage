@@ -10,7 +10,7 @@ const Computers = ({ isMobile }) => {
   console.info(">>> isMobile prop:", isMobile);
 
   return (
-    // creating three.js elements with start with mesh not div
+    // creating three.js elements starts with mesh not div
     <mesh>
       {/* need to add light if not we won't be able to see anything */}
       <hemisphereLight intensity={0.15} groundColor="black" />
@@ -23,11 +23,10 @@ const Computers = ({ isMobile }) => {
         castShadow
         shadow-mapSize={1024}
       />
-      {/*TODO: isMobile toggle not working */}
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.70 : 0.75}
-        position={isMobile ? [0, -3, 2.2] : [0, -3.25, -1.5]}
+        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -62,6 +61,7 @@ const ComputerCanvas = () => {
     <Canvas
       frameloop="demand"
       shadows
+      dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
