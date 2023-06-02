@@ -1,4 +1,6 @@
-import React from "react";
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/prop-types */
+/* eslint-disable react-refresh/only-export-components */
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -6,6 +8,7 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
+
 
 const ServiceCard = ({ index, title, icon }) => {
   console.info(">>> title: ", title);
@@ -16,6 +19,7 @@ const ServiceCard = ({ index, title, icon }) => {
         className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
       >
         <div
+
           options={{
             max: 45,
             scale: 1,

@@ -128,10 +128,11 @@ const technologies = [
     name: "docker",
     icon: docker,
   },
-  {
-    name: "git",
-    icon: git,
-  },
+  // TODO: 16 balls causes errors but 15 doesn't, why?
+  // {
+  //   name: "git",
+  //   icon: git,
+  // },
 ];
 
 const experiences = [

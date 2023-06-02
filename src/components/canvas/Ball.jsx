@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable no-unused-vars */
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
@@ -10,8 +13,8 @@ import {
 
 import CanvasLoader from "../Loader";
 
-const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl]);
+const Ball = ({ icon }) => {
+  const [decal] = useTexture([icon]);
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
@@ -45,7 +48,7 @@ const BallCanvas = ({ icon }) => {
     <Canvas frameloop="demand" gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
-        <Ball imgUrl={icon} />
+        <Ball icon={icon} />
       </Suspense>
 
       <Preload all />
