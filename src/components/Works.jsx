@@ -1,11 +1,19 @@
+import "./Init";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { github } from "../assets";
+import { carrent, github } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
+import {
+  githubRepoNames,
+  Tag,
+  tagColors,
+  Project,
+} from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import { useEffect, useState } from "react";
+// import { Octokit } from "octokit";
 
 const ProjectCard = ({
   index,
@@ -70,7 +78,9 @@ const ProjectCard = ({
         {/* tech stacks used for projects */}
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <p key={tag.name} className={`text-[14px] ${tag.color}`}>#{tag.name}</p>
+            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+              #{tag.name}
+            </p>
           ))}
         </div>
       </Tilt>
@@ -79,6 +89,46 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const username = "jamesgayht";
+  const [ghProjects, setGhProjects] = useState([]);
+
+  useEffect(() => {
+    let tempProjects = [];
+    const makeApiCall = () => {
+      githubRepoNames.map(async (repoName) => {
+        const githubApiUrl = `https://api.github.com/repos/${username}/${repoName}`;
+
+        try {
+          const res = await fetch(githubApiUrl);
+          const json = await res.json();
+
+          const tags = [];
+          if (json.topics) {
+            json.topics.map((topic, index) => {
+              tags.push(new Tag(topic, tagColors[index]));
+            });
+          }
+
+          const descriptionArr = json.description.split(":");
+          const name = descriptionArr[0].trim();
+          const description = descriptionArr[1].trim();
+
+          tempProjects.push(
+            new Project(name, description, tags, carrent, json.html_url)
+          );
+          console.info(">>> tempProjects: ", tempProjects);
+          setGhProjects(tempProjects);
+          console.info(">>> ghProjects: ", ghProjects);
+        } catch (error) {
+          console.log(">>>> error making api request: ", error);
+        }
+      });
+    };
+
+    makeApiCall();
+
+  }, []);
+
   return (
     <>
       {/* works header */}
@@ -103,7 +153,7 @@ const Works = () => {
 
       {/* container for project cards */}
       <div className="mt-20 flex flex-wrap gap-7">
-        {projects.map((project, index) => (
+        {ghProjects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
