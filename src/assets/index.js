@@ -20,15 +20,31 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import java from "./tech/java.png";
+import angular from "./tech/angular.png";
+import redis from "./tech/redis.png";
+import jquery from "./tech/jquery.png";
+import mysql from "./tech/mysql.png";
+import springboot from "./tech/springboot.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import visa from "./company/visa.png";
+import toluna from "./company/toluna.png";
+import ascott from "./company/ascott.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+
+import pathfindingvisualizer from "./pathfindingvisualizer.png";
+import portfolipage from "./portfoliopage.png";
+import dategenie from "./dategenie.png";
+import jglogo from "./jglogo.svg";
+import jgwhitelogo from "./jgwhitelogo.svg";
+import jgwhiteshadow from "./jgwhiteshadow.svg";
 
 export {
   logo,
@@ -59,4 +75,19 @@ export {
   carrent,
   jobit,
   tripguide,
+  pathfindingvisualizer,
+  portfolipage,
+  dategenie,
+  jglogo,
+  jgwhitelogo,
+  jgwhiteshadow,
+  visa,
+  toluna,
+  ascott,
+  java,
+  angular,
+  jquery,
+  mysql,
+  redis,
+  springboot,
 };

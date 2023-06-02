@@ -43,14 +43,14 @@ const About = () => {
       {/* animated subtext for about page */}
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-4 text-secondary text-[17px] max-w-xl leading-[30px] text-justify"
       >
-        I&apos;m a software developer with experience in Java, JavaScript and
-        TypeScript. I work with frameworks such as SpringBoot, Angular and
-        React. I&apos;m a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let&apos;s work together to bring your ideas to
-        life!
+        I&apos;m a software developer working with Visa to build scalable and maintainable applications. I&apos;m passionate about client service and building applications that makes living life a little easier. If you are seeking collaboration opportunities to create user-friendly solutions that solve real-world problems, let&apos;s discuss more!
+        <br />
+        <br />
+        Languages & Technologies Stacks: 
+        <br />
+        Java, JavaScript, TypeScript, HTML, CSS, SpringBoot, Angular, React, jQuery, Three.js, Tailwind, NodeJS, MongoDB, MySQL, Redis, Docker, Git
       </motion.p>
 
       {/* cards animation */}

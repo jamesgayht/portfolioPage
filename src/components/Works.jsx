@@ -1,15 +1,15 @@
-import "./Init";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { carrent, github } from "../assets";
+import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import {
   githubRepoNames,
   Tag,
   tagColors,
   Project,
+  projectImages,
 } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useEffect, useState } from "react";
@@ -95,7 +95,7 @@ const Works = () => {
   useEffect(() => {
     let tempProjects = [];
     const makeApiCall = () => {
-      githubRepoNames.map(async (repoName) => {
+      githubRepoNames.map(async (repoName, index) => {
         const githubApiUrl = `https://api.github.com/repos/${username}/${repoName}`;
 
         try {
@@ -114,7 +114,7 @@ const Works = () => {
           const description = descriptionArr[1].trim();
 
           tempProjects.push(
-            new Project(name, description, tags, carrent, json.html_url)
+            new Project(name, description, tags, projectImages[index], json.html_url)
           );
           console.info(">>> tempProjects: ", tempProjects);
           setGhProjects(tempProjects);
@@ -143,10 +143,8 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to the code repositories and live demos. It reflects my ability
-          to solve complex problems, work with different technologies, and
+          The following projects showcases some of my skills and experience I&apos;ve acquired. Each project is briefly described with
+          links to the source code repositories and live demos. It reflects my ability to solve complex problems, work with different technologies, and
           manage projects effectively.
         </motion.p>
       </div>
