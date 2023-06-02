@@ -8,6 +8,7 @@ const Stars = (props) => {
   const ref = useRef();
 
   const [sphere] = useState(() =>
+    // TypedArray allows quicker access to data than normal arrays that helps with performance management
     random.inSphere(new Float32Array(5000), { radius: 1.2 })
   );
 
