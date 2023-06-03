@@ -7,7 +7,10 @@ React 18, three.js & Tailwind
 Github API
 EmailJS
 
-## How To Use
+## Features
+
+### Wireframes
+![wireframes](https://github.com/jamesgayht/portfolioPage/assets/106546722/4ea222f7-fc63-472c-8d31-12419eeba846)
 
 ### Navbar 
 Allows for easy navigation between pages
