@@ -1,10 +1,11 @@
 # My Portfolio Page
 
 ## Technologies
-React 18, three.js & Tailwind
+React 18, three.js, Tailwind
 
 ## APIs / Services
 Github API
+<br>
 EmailJS
 
 ## Features
@@ -23,14 +24,18 @@ Features a 3D Desktop Model that spins
 
 ### About
 Overview about myself and the technologies I've used
+<br>
 Features service cards on what I can offer
 
 ### Work
 Features a react vertical timeline on my work experiences
+<br>
 Features a ball canvas on the technologies I've used designed with ThreeJS
+<br>
 Features example of projects that I've done by calling Github's API - click on the Github icon to view the repository source code 
 
 ### Contact
 Features a spinning globe 
+<br>
 Features a contact form utilizing EmailJS service to send messages to my personal email
 
