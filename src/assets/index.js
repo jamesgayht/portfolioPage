@@ -27,17 +27,9 @@ import jquery from "./tech/jquery.png";
 import mysql from "./tech/mysql.png";
 import springboot from "./tech/springboot.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
 import visa from "./company/visa.png";
 import toluna from "./company/toluna.png";
 import ascott from "./company/ascott.png";
-
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
 
 import pathfindingvisualizer from "./pathfindingvisualizer.png";
 import portfolipage from "./portfoliopage.png";
@@ -68,13 +60,6 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
   pathfindingvisualizer,
   portfolipage,
   dategenie,
